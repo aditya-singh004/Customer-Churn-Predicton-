@@ -1,153 +1,152 @@
-# 📊 Customer Churn Prediction using Machine Learning
+# 🚀 Customer Churn Prediction
 
-## 🚀 Project Overview
-This project focuses on predicting customer churn for a bank using machine learning techniques. The goal is to identify customers who are likely to leave, enabling proactive retention strategies.
+<p align="center">
+  <b>End-to-End Machine Learning Project to Predict Customer Churn</b><br>
+  <i>Feature Engineering • Model Optimization • Business Insights</i>
+</p>
+
+---
+
+## 📌 Overview
+This project predicts whether a customer will leave a bank (**churn prediction**) using machine learning models.  
+It combines **EDA, feature engineering, model comparison, and hyperparameter tuning** to build a high-performance solution.
 
 ---
 
 ## 🎯 Objective
-- Predict whether a customer will churn (`Exited`)
-- Analyze key factors influencing churn
-- Build and compare multiple ML models
-- Optimize model performance using hyperparameter tuning
+✔ Predict customer churn (`Exited`)  
+✔ Identify key churn drivers  
+✔ Compare multiple ML models  
+✔ Optimize performance using tuning  
 
 ---
 
-## 🧠 Dataset
-The dataset contains customer information such as:
-- Credit Score
-- Age
-- Tenure
-- Balance
-- Number of Products
-- Estimated Salary
-- Geography & Gender
+## 🧾 Dataset Snapshot
 
-Target Variable:
-- `Exited` (1 = Churn, 0 = Not Churn)
+| Feature | Description |
+|--------|------------|
+| CreditScore | Customer credit score |
+| Age | Customer age |
+| Tenure | Years with bank |
+| Balance | Account balance |
+| NumOfProducts | Products used |
+| EstimatedSalary | Salary |
+| Geography | Country |
+| Gender | Male/Female |
 
----
-
-## 🛠️ Technologies Used
-- Python
-- Pandas, NumPy
-- Matplotlib, Seaborn
-- Scikit-learn
-- LightGBM, XGBoost
+🎯 **Target Variable:** `Exited`
 
 ---
 
-## 🔄 Project Workflow
+## ⚙️ Tech Stack
 
-### 1. Data Preprocessing
-- Handled missing values
-- Identified categorical and numerical features
-- One-hot encoding for categorical variables
-- Feature scaling using RobustScaler
+<p align="center">
 
----
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-black?logo=pandas)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange?logo=scikit-learn)
+![LightGBM](https://img.shields.io/badge/LightGBM-Boosting-green)
+![XGBoost](https://img.shields.io/badge/XGBoost-Boosting-red)
+![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-purple)
 
-### 2. Feature Engineering
-Created new features:
-- `NewTenure` (Tenure normalized by Age)
-- Binned features using quantiles:
-  - Credit Score
-  - Age
-  - Balance
-  - Estimated Salary
+</p>
 
 ---
 
-### 3. Exploratory Data Analysis (EDA)
-- Distribution plots for churn vs non-churn
-- Correlation heatmap
-- Feature-wise analysis
+## 🔄 Workflow
+
+### 🔹 1. Data Preprocessing
+- Missing value analysis  
+- Encoding categorical variables  
+- Feature scaling using **RobustScaler**
 
 ---
 
-### 4. Model Building
-Trained multiple models:
-- Logistic Regression
-- KNN
-- Decision Tree
-- Random Forest
-- SVM
-- Gradient Boosting
-- LightGBM
+### 🔹 2. Feature Engineering
+- Tenure normalization (`Tenure / Age`)  
+- Quantile-based binning  
+- Salary, balance & credit segmentation  
 
 ---
 
-### 5. Model Evaluation
-- Used **Stratified K-Fold Cross Validation**
-- Evaluation metric: **ROC-AUC**
-- Compared model performance
+### 🔹 3. Exploratory Data Analysis (EDA)
+- Distribution analysis (Churn vs Non-Churn)  
+- Correlation heatmap  
+- Feature relationships  
 
 ---
 
-### 6. Hyperparameter Tuning
-Optimized models using GridSearchCV:
-- Gradient Boosting
-- LightGBM
+### 🔹 4. Model Training
+Multiple models evaluated:
+
+- Logistic Regression  
+- Random Forest  
+- SVM  
+- Gradient Boosting  
+- **LightGBM (Best)**  
 
 ---
 
-### 7. Final Model Selection
-Top performing models:
-- LightGBM
-- Gradient Boosting
-
-Final evaluation done on test data using:
-- Classification Report
-- Confusion Matrix
-- ROC-AUC Score
+### 🔹 5. Model Evaluation
+- **Stratified K-Fold Cross Validation**
+- Metric: **ROC-AUC**
+- Confusion Matrix & Classification Report  
 
 ---
 
-### 8. Feature Importance
-- Visualized feature importance for tree-based models
-- Identified key drivers of churn
+### 🔹 6. Hyperparameter Tuning
+- GridSearchCV applied on:
+  - Gradient Boosting  
+  - LightGBM  
 
 ---
 
-## 📈 Results
+## 📊 Results
+
+<p align="center">
 
 | Model       | ROC-AUC |
 |------------|--------|
-| LightGBM   | ~0.868 |
-| GBM        | ~0.865 |
+| 🟢 LightGBM | **0.868** |
+| 🔵 GBM      | 0.865 |
 
-👉 LightGBM performed slightly better and was selected as the final model.
+</p>
+
+🏆 **Best Model:** LightGBM
 
 ---
 
-## 📊 Key Insights
-- Age and balance significantly influence churn
-- Customers with low tenure are more likely to leave
-- Certain geographies show higher churn rates
+## 📈 Feature Importance
+- Age 📊  
+- Balance 💰  
+- Credit Score 💳  
+- Geography 🌍  
+
+These features strongly influence customer churn behavior.
+
+---
+
+## 💡 Key Insights
+- Older customers churn more frequently  
+- Low tenure = higher churn risk  
+- Certain regions show higher churn rates  
+- Balance plays a critical role  
 
 ---
 
 ## ⚠️ Challenges
-- Handling imbalanced data
-- Avoiding data leakage during scaling and CV
-- Feature selection and engineering
+- Class imbalance  
+- Avoiding data leakage  
+- Feature selection complexity  
 
 ---
 
 ## 🔥 Future Improvements
-- Use SHAP for explainability
-- Implement Optuna for advanced tuning
-- Apply SMOTE for class imbalance
-- Deploy model using Flask or FastAPI
+- SHAP Explainability 🔍  
+- Optuna Hyperparameter Tuning ⚡  
+- Model Deployment (Flask / FastAPI) 🚀  
+- Threshold optimization for business impact  
 
 ---
 
-## 💡 Conclusion
-This project demonstrates a complete end-to-end machine learning pipeline for churn prediction, from data preprocessing to model optimization and evaluation.
-
----
-
-## 👤 Author
-Aditya Singh
-
----
+## 📂 Project Structure
